@@ -2,12 +2,6 @@ from flask import Flask, render_template, url_for, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
-# def create_app():
-#     app = Flask(__name__)
-
-#     with app.app_context():
-#         init_db()
-#     return app
 
 app = Flask(__name__)
 
@@ -22,9 +16,7 @@ class Todo(db.Model):
     def __repr__(self):
         return '<Task %r' % self.id
 
-# @app.before_first_request
-# def create_tables():
-#     db.create_all()
+
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
